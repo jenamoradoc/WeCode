@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $header_height: 40px;
-$sidebar_width: 20%;
+$sidebar_width: 250px;
 $footer_height: 25px;
 
 #header {
@@ -24,9 +24,31 @@ $footer_height: 25px;
 #editor {
     position: absolute;
     top: $header_height;
-    right: 0;
-    bottom: $footer_height;
     left: 0;
+    bottom: $footer_height;
+    right: $sidebar_width;
+}
+
+#sidebar {
+    position: absolute;
+    width: $sidebar_width;
+    right: 0;
+    top: $header_height;
+    bottom: $footer_height;
+    background: #FAFAFA;
+    #myVideoArea {
+        width: 90%;
+        height: 150px;
+        margin-left: auto;
+        margin-right: auto; 
+        display: block;
+        background: #4d4d4d;
+        svg {
+            display: block;
+            margin-left: auto;
+            margin-right: auto; 
+        }
+    }
 }
 
 
