@@ -8,19 +8,18 @@ class SnippetChannel < ApplicationCable::Channel
   end
 
   def receive(data)
-    if (data["persist"] != nil)
-      @snippet = Snippet.find_by slug: data["slug"]
-      @snippet.code = data["body"]
-      @snippet.theme = data["theme"]
-      @snippet.language = data["language"]
-      @snippet.save
+
+    case data["todo"] 
+      when "ideChanged"
+        if (data["persist"] != nil)
+          @snippet = Snippet.find_by slug: data["slug"]
+          @snippet.code = data["body"]
+          @snippet.theme = data["theme"]
+          @snippet.language = data["language"]
+          @snippet.save
+        end
     end
-    
-    # @snippet = Snippet.find_by slug: data["slug"]
-    # @snippet.code = data["body"]
-    # @snippet.theme = data["theme"]
-    # @snippet.language = data["language"]
-    # @snippet.save
+ 
     ActionCable.server.broadcast("chat_#{params[:room]}", data)
   end
 

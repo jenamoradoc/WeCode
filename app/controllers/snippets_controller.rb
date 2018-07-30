@@ -1,20 +1,28 @@
+
+require 'net/http'
+require 'uri'
+require 'json'
+require 'color-generator'
+
+
 class SnippetsController < ApplicationController
   before_action :set_snippet, only: [:show, :edit, :update, :destroy]
-
-  # GET /snippets
-  # GET /snippets.json
-  def index
-    @snippets = Snippet.all
-  end
 
   # GET /snippets/1
   # GET /snippets/1.json
   def show
-      @snippet = Snippet.find_by slug: params[:slug]
+    generator = ColorGenerator.new saturation: 0.3, lightness: 0.75
+    @nickname = generate_nick_name
+    @snippet = Snippet.find_by slug: params[:slug]
   end
 
   def stream
+
+    generator = ColorGenerator.new saturation: 0.3, lightness: 0.75
+
     @snippet = Snippet.find_by slug: params[:slug]
+    @nickname = generate_nick_name
+    
     unless @snippet
       @snippet = Snippet.new
       @snippet.language = "javascript"
@@ -22,57 +30,25 @@ class SnippetsController < ApplicationController
       @snippet.save
     end
     session[:current_snippet] = @snippet.slug
-end
+  end
 
   # GET /snippets/new
-  def new
-    @snippet = Snippet.new
-  end
+  def generate_nick_name
+    uri = URI.parse("https://api.codetunnel.net/random-nick")
+    request = Net::HTTP::Post.new(uri)
+    request.content_type = "application/json" 
+    request.body = JSON.dump({})
+    req_options = { use_ssl: uri.scheme == "https" }
 
-  # GET /snippets/1/edit
-  def edit
-
-  end
-
-  # POST /snippets
-  # POST /snippets.json
-  def create
-    @snippet = Snippet.new(snippet_params)
-
-    respond_to do |format|
-      if @snippet.save
-        format.html { redirect_to @snippet, notice: 'Snippet was successfully created.' }
-        format.json { render :show, status: :created, location: @snippet }
-      else
-        format.html { render :new }
-        format.json { render json: @snippet.errors, status: :unprocessable_entity }
-      end
+    response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
+      http.request(request)
     end
-  end
 
-  # PATCH/PUT /snippets/1
-  # PATCH/PUT /snippets/1.json
-  def update
-    respond_to do |format|
-      if @snippet.update(snippet_params)
-        format.html { redirect_to @snippet, notice: 'Snippet was successfully updated.' }
-        format.json { render :show, status: :ok, location: @snippet }
-      else
-        format.html { render :edit }
-        format.json { render json: @snippet.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+    json = JSON.parse(response.body)
+    return json["nickname"]
 
-  # DELETE /snippets/1
-  # DELETE /snippets/1.json
-  def destroy
-    @snippet.destroy
-    respond_to do |format|
-      format.html { redirect_to snippets_url, notice: 'Snippet was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  end 
+     
 
   private
     # Use callbacks to share common setup or constraints between actions.
