@@ -16,7 +16,6 @@ $footer_height: 25px;
     display: flex;
     align-items: center;
     svg {
-        margin-left: 10px;
         margin-right: 10px;
     }
 }
@@ -137,22 +136,52 @@ $footer_height: 25px;
 
 
  .rightButtons {
+
     margin-left: auto;
     display: flex;
-    a {  
-        padding: 8px;
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+0,eeeeee+100;Grey+Flat */
-        background: #eeeeee; /* Old browsers */
-        background: -moz-linear-gradient(top, #eeeeee 0%, #eeeeee 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(top, #eeeeee 0%,#eeeeee 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom, #eeeeee 0%,#eeeeee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
-        display: block;
-        margin-right: 10px;
-        text-decoration: none;
-        -webkit-border-radius: 5px 5px 5px 5px;
-        border-radius: 5px 5px 5px 5px;
+
+    span {
+        line-height: 40px;
+        font-size: 10px;
     }
+
+    input {
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px; 
+        border: 1px solid #cdcdcd;
+        color: #999;
+        padding: 5px;
+        margin: 8px;
+        border: 1px solid #cdcdcd;
+        height: 12px;
+        width: 300px;
+        text-align: center;
+    }
+    
+    .btn {  
+        padding: 18px;
+        border-left: 1px solid #dedede;
+        display: block;
+        text-decoration: none; 
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        opacity: .60; 
+    }   
+
+    .btn:active {
+        opacity: 1;  
+    }
+ 
+    .upload-cloud {
+        background-image: url(image-path('upload-cloud.svg'));
+    }
+
+    .share {
+        background-image: url(image-path('share.svg'));
+    }
+
  }
 
 #footer {
