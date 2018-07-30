@@ -12,7 +12,7 @@ $footer_height: 25px;
     left: 0;
     height: $header_height;
     width: 100%; 
-    background: #FAFAFA;
+    background: #ffffff;
     display: flex;
     align-items: center;
     svg {
@@ -35,19 +35,103 @@ $footer_height: 25px;
     right: 0;
     top: $header_height;
     bottom: $footer_height;
-    background: #FAFAFA;
+    background: #f0f0f0;
     #myVideoArea {
-        width: 90%;
+        width: 99%;
         height: 150px;
         margin-left: auto;
         margin-right: auto; 
         display: block;
-        background: #4d4d4d;
+        background: #4d4d4d; 
+        margin-bottom: 5px;
         svg {
-            display: block;
-            margin-left: auto;
-            margin-right: auto; 
+            position: absolute;
+            left: 95px;
+            top: 40px;
         }
+        p {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            top: 85px;
+            font-size: 10px;
+            color: #d4d4d4;
+        }
+        .actionButton { 
+            position: absolute;
+            width: 55%;
+            height: 40px;
+            display: none;
+            justify-content: center;
+            margin-left: 55px;
+            z-index: 100;
+            top: 104px;
+            
+            div { 
+                width: 40px;
+                height: 40px;
+                margin-right:  auto;
+                margin-left: auto;
+                
+                display: block;
+                border-radius: 50%; 
+                background-position: center;
+                background-repeat: no-repeat;
+                cursor: pointer;
+            }
+            .on {
+                background-color: #444;
+            }
+            .off {
+                background-color: #ce021b;
+            }
+            #micro-switch.on {
+                background-image: url(image-path('microphone.svg'));
+            }
+            #micro-switch.off {
+                background-image: url(image-path('micro-mute.svg')); 
+            }
+            #video-switch.on {
+                background-image: url(image-path('video.svg')); 
+            }
+            #video-switch.off {
+                background-image: url(image-path('video-muted.svg')); 
+            }
+            #stop-button {
+                background-image: url(image-path('stop.svg')); 
+                background-color: #444;
+            }
+
+        }
+    }
+    #chatArea {
+        width: 99%;
+        top: 0; 
+        height: calc(100% - 163px);
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        #messagesArea {
+            height: calc(100% - 60px);
+            background: #FAFAFA;
+            overflow: auto;
+            padding-bottom: 15px;
+            padding-right: 2px;
+        }
+        p {
+            font-size: 10px;
+            margin-top: 4px;
+            margin-bottom: 2px;
+            margin-left: 2px;
+            font-weight: 600;
+        }
+        input {
+            margin: 0;
+            padding: 4px; 
+            width: calc(100% - 10px);
+        }
+
     }
 }
 
@@ -89,4 +173,89 @@ $footer_height: 25px;
     div {
         margin-right: 10px;
     }
+}
+
+.spechBubleContainer {
+
+    img {
+        width: 32px;
+    }
+
+    img.right {
+        float: right; 
+    }
+
+    img.left {
+        float: left; 
+    }
+
+    .nickname-left {
+        font-size: 9px;
+        margin-right: 35px;
+        text-align: right;
+        color: #888;
+    }
+
+    .nickname-rigth {
+        font-size: 9px;
+        margin-left: 35px;
+        text-align: left;
+        color: #888;
+    }
+
+    .speech-bubble-right {
+        position: relative;
+        background: #5eb2f5;
+        border-radius: .4em;
+        margin: 15px;
+        padding: 8px;
+        font-size: 11px;
+        margin-right: 35px;
+        margin-bottom: 0;
+        margin-top: 6px;
+        color: #ffffff;
+    }
+    
+    .speech-bubble-right:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border: 0.531em solid transparent;
+        border-left-color: #5eb2f5;
+        border-right: 0;
+        border-bottom: 0;
+        margin-top: -0.266em;
+        margin-right: -0.531em;
+    }
+    
+    .speech-bubble-left {
+        position: relative;
+        background: #cccccc;
+        border-radius: .4em;
+        font-size: 11px;
+        margin: 15px;
+        padding: 8px;
+        margin-left: 35px;
+        margin-bottom: 0;
+        margin-top: 6px;
+    }
+    
+    .speech-bubble-left:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border: 0.531em solid transparent;
+        border-right-color: #cccccc;
+        border-left: 0;
+        border-bottom: 0;
+        margin-top: -0.266em;
+        margin-left: -0.531em;
+    }
+
 }
