@@ -17,7 +17,6 @@ class SnippetsController < ApplicationController
   end
 
   def stream
-
     generator = ColorGenerator.new saturation: 0.3, lightness: 0.75
 
     @snippet = Snippet.find_by slug: params[:slug]
@@ -26,10 +25,13 @@ class SnippetsController < ApplicationController
     unless @snippet
       @snippet = Snippet.new
       @snippet.language = "javascript"
-      @snippet.slug = params[:slug] || SecureRandom.base64
+      @snippet.slug = params[:slug] || SecureRandom.alphanumeric(8)
       @snippet.save
+      redirect_to controller: 'snippets', action: 'stream', slug: @snippet.slug 
     end
     session[:current_snippet] = @snippet.slug
+
+
   end
 
   # GET /snippets/new

@@ -4,7 +4,7 @@
 
 $header_height: 40px;
 $sidebar_width: 250px;
-$footer_height: 25px;
+$footer_height: 28px;
 
 #header {
     position: absolute;
@@ -111,12 +111,22 @@ $footer_height: 25px;
         margin-left: auto;
         margin-right: auto;
         display: block;
+
+
         #messagesArea {
             height: calc(100% - 60px);
             background: #FAFAFA;
             overflow: auto;
             padding-bottom: 15px;
             padding-right: 2px;
+            p {
+                font-weight: 400;
+            }
+            .legendChat {
+                width: 100%;
+                text-align: center;
+                color: #999;
+            }
         }
         p {
             font-size: 10px;
@@ -185,22 +195,25 @@ $footer_height: 25px;
  }
 
 #footer {
+    padding-left: 10px;
     position: absolute;
     height: $footer_height;
+    line-height: $footer_height;
+    font-size: 10px;
     left: 0;
     bottom: 0;
     width: 100%;
     background: #FAFAFA; 
-    display: flex;  
+    display: flex;
     span {
-        margin-left: 15px;
-        margin-right: 5px;
-        font-size: 12px;
-        vertical-align: middle;
-        padding-top: 3px;
+        margin-left: 0px;
+        margin-right: 7px;
+        vertical-align: middle; 
+        font-weight: 600;
+        line-height: $footer_height;
     }
     div {
-        margin-right: 10px;
+        margin-right: 8px;
     }
 }
 
@@ -287,4 +300,26 @@ $footer_height: 25px;
         margin-left: -0.531em;
     }
 
+}
+
+.select-style {
+    border: 1px solid #ccc;
+    width: 120px;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #fafafa url(image-path('up-chevron.svg')) no-repeat 94% 50%;
+}
+
+.select-style select {
+    padding: 5px 8px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+}
+
+.select-style select:focus {
+    outline: none;
 }
