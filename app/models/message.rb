@@ -1,3 +1,3 @@
 class Message < ApplicationRecord
-    belogs_to :snippet
+    belongs_to :snippet
 end
