@@ -152,8 +152,7 @@
     function save()
     {
         var saveButtton = document.querySelector(".upload-cloud");
-
-        new Opentip(saveButtton, "Changes has been saved");
+ 
 
         //mostrarTooltip(saveButtton, "Changes has been saved");
         App.snippet.send(build_payload(null, true))
