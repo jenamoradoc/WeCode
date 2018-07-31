@@ -31,17 +31,17 @@ The application allows interacting with one or groups in the same “snippet” 
 
 ## What we learned
 
--That there is still much to be improved to make existing online code editors a better collaborative experience between teams.
+- That there is still much to be improved to make existing online code editors a better collaborative experience between teams.
 
--That the support of a multimedia item in a web page is something that can be delegated and this could add so much value to interactive apps orientate to teams.
+- That the support of a multimedia item in a web page is something that can be delegated and this could add so much value to interactive apps orientate to teams.
 
 ## What's next 
--Add an interactive terminal to show the implementation and execution of an algorithm based in a Docker container. 
+- Add an interactive terminal to show the implementation and execution of an algorithm based in a Docker container. 
 - To support multiple cursor indicators in the code editor.
 - Add Multi import file support snippets from Gist or Github projects.
--Allow to video record the We Code session, including the live coding, video, sound and chat interactions. 
--Schedule a live coding session to a future. 
-Allow to soak up a live session an external web page. 
+- Allow to video record the We Code session, including the live coding, video, sound and chat interactions. 
+- Schedule a live coding session to a future. 
+- Allow to soak up a live session an external web page. 
 
 
 ## Misc
