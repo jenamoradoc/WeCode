@@ -19,18 +19,21 @@ The application allows interacting with one or groups in the same “snippet” 
 
 <center><img src="https://media.giphy.com/media/cYRgX4XbOYswNP8ozH/giphy.gif?raw=true" /></center>
 
+![](https://i.imgur.com/ZI5jui6.png)
+
+![](https://i.imgur.com/o3xOysp.png)
+
 ## Challenges
 
--Solve the challenge in a short period of time.
--Create and develop a solution that was technically challenging for us and not only reuse code pre-existing.
--Create and develop a corporative image and mark that represent the purposes of the app.
+- Reach the challenge goal in a short period of time.
+- Create and develop a solution that was technically challenging for us and not only reuse code pre-existing.
+- Create and develop a corporative image and mark that represent the purposes of the app.
 
 ## What we learned
 
 -That there is still much to be improved to make existing online code editors a better collaborative experience between teams.
 
 -That the support of a multimedia item in a web page is something that can be delegated and this could add so much value to interactive apps orientate to teams.
-
 
 ## What's next 
 -Add an interactive terminal to show the implementation and execution of an algorithm based in a Docker container. 
@@ -39,6 +42,7 @@ The application allows interacting with one or groups in the same “snippet” 
 -Allow to video record the We Code session, including the live coding, video, sound and chat interactions. 
 -Schedule a live coding session to a future. 
 Allow to soak up a live session an external web page. 
+
 
 ## Misc
 Open Source Github Code: https://github.com/jenamoradoc/WeCode
