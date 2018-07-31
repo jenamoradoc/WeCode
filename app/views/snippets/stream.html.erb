@@ -115,8 +115,47 @@
         }
     });
 
+    function getOffset(el) {
+        rect = el.getBoundingClientRect();
+        return {
+            left: rect.left + window.scrollX,
+            top: rect.top + window.scrollY
+        }
+    }
+    
+    function mostrarTooltip(elemento,mensaje){
+
+        // Si no existe aun el tooltip se crea
+        if (!document.getElementById(elemento.id+"tp") ){
+            // Dimensiones del elemento al que se quiere añadir el tooltip
+            anchoElemento = elemento.width;
+            altoElemento = elemento.height; 
+            // Coordenadas del elemento al que se quiere añadir el tooltip
+            coordenadaXElemento = getOffset(elemento).left;
+            coordenadaYElemento = getOffset(elemento).top; 
+            // Coordenadas en las que se colocara el tooltip
+            x = coordenadaXElemento + anchoElemento/2 + 20;
+            y = coordenadaYElemento + altoElemento/2 + 10; 
+            // Crea el tooltip con sus atributos
+            var tooltip = document.createElement('div');
+            tooltip.id = elemento.id + "tp";
+            tooltip.className = 'toolTip';
+            tooltip.innerHTML = mensaje;
+            tooltip.style.left = x + "px";
+            tooltip.style.top = y + "px"; 
+            // Añade el tooltip
+            document.body.appendChild(tooltip); 
+            tooltip.style.display = "block"; 
+        }
+    }
+
     function save()
     {
+        var saveButtton = document.querySelector(".upload-cloud");
+
+        new Opentip(saveButtton, "Changes has been saved");
+
+        //mostrarTooltip(saveButtton, "Changes has been saved");
         App.snippet.send(build_payload(null, true))
     }
 

@@ -323,3 +323,18 @@ $footer_height: 28px;
 .select-style select:focus {
     outline: none;
 }
+
+
+.toolTip{
+    background: rgba(20,20,20,0.9);
+    border: 2px solid #87cefa;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #333;
+    color: #87cefa;
+    font-size: 0.8em;
+    padding: 10px 10px 10px 35px;
+    max-width: 600px;
+    position: absolute;
+    z-index: 100;   
+}
+
