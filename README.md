@@ -19,7 +19,7 @@ The application allows interacting with one or groups in the same “snippet” 
 
 <center><img src="https://media.giphy.com/media/BM10lzCMmS4s3pKKOM/giphy.gif" /></center>
 
-![](https://i.imgur.com/sONGmsP.png)
+![](https://i.imgur.com/ADNycCf.png)
  
 
 ## Challenges
